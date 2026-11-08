@@ -47,3 +47,11 @@ docker service ls
 # Inspect replica distribution across nodes
 docker stack ps secure_stack
 ```
+## Automated Database Backups & Retention
+
+The repository includes a production-grade Bash backup script (`scripts/db-backup.sh`) with strict execution controls (`set -euo pipefail`):
+
+* **Stream Compression:** Uses containerized `pg_dump` piped directly to host-level `gzip` without uncompressed intermediate disk writes.
+* **Integrity Validation:** Verifies non-zero byte dump size prior to successful return.
+* **Automated Housekeeping:** Rotates and removes dump files older than 7 days using timestamp-based file pattern matching.
+* **Scheduled Execution:** Configured via Crontab (see `crontab.example`).

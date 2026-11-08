@@ -1,0 +1,3 @@
+# Automated PostgreSQL Backup
+# Runs every night at 02:00 AM and appends logs
+0 2 * * * /bin/bash /path/to/secure-app/scripts/db-backup.sh >> /var/log/db-backup.log 2>&1
