@@ -19,3 +19,31 @@ cp .env.example .env
 # Edit .env with your credentials
 docker compose up -d
 ```
+---
+
+## Deployment Modes
+
+### 1. Local Development (Docker Compose)
+Used for single-node local development and rapid testing:
+
+```bash
+# Start the local environment
+docker compose up -d
+
+# Verify services
+docker compose ps
+```
+
+### 2. High-Availability Cluster (Docker Swarm)
+Used for production staging, providing zero-downtime rolling updates, replica management, and load balancing:
+
+```bash
+# Deploy or update the stack
+docker stack deploy -c docker-compose-swarm.yml secure_stack
+
+# Verify cluster services
+docker service ls
+
+# Inspect replica distribution across nodes
+docker stack ps secure_stack
+```
