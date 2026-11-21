@@ -1,4 +1,4 @@
-*.yml linguist-detectable=true
-*.yaml linguist-detectable=true
-Dockerfile* linguist-detectable=true
-*.conf linguist-detectable=true
+*.yml linguist-detectable=true linguist-language=YAML
+*.yaml linguist-detectable=true linguist-language=YAML
+Dockerfile* linguist-detectable=true linguist-language=Dockerfile
+*.conf linguist-detectable=true linguist-language=Nginx
