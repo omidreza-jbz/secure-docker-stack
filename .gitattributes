@@ -1,0 +1,4 @@
+*.yml linguist-detectable=true
+*.yaml linguist-detectable=true
+Dockerfile* linguist-detectable=true
+*.conf linguist-detectable=true
